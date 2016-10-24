@@ -15,13 +15,7 @@
     <div id="content"></div>
     <script type="text/babel">
       var CommentBox = React.createClass({
-        getInitialState: function() {
-          return {
-            data: []
-          };
-        },
-
-        componentDidMount: function() {
+        loadCommentsFromServer: function() {
           var jqXHR = $.ajax({
             url: this.props.url,
             dataType: 'json',
@@ -34,6 +28,17 @@
           .fail(function(xhr, status, err) {
             console.error(this.props.url, status, err.toString());
           });
+        },
+
+        getInitialState: function() {
+          return {
+            data: []
+          };
+        },
+
+        componentDidMount: function() {
+          this.loadCommentsFromServer();
+          setInterval(this.loadCommentsFromServer, this.props.pollInterval);
         },
 
         render: function() {
@@ -100,7 +105,7 @@
       });
 
       ReactDOM.render(
-        <CommentBox url="/api/comments" />,
+        <CommentBox url="/api/comments" pollInterval={20000} />,
         document.getElementById('content')
       );
     </script>
