@@ -30,6 +30,10 @@
           });
         },
 
+        handleCommentSubmit: function(comment) {
+          // @TODO 処理を書く
+        },
+
         getInitialState: function() {
           return {
             data: []
@@ -46,7 +50,7 @@
             <div className="commentBox">
               <h1>Comments</h1>
               <CommentList data={this.state.data} />
-              <CommentForm />
+              <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
             </div>
           );
         }
