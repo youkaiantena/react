@@ -1,0 +1,17 @@
+{
+  "name": "react-tutorial-old",
+  "version": "1.0.0",
+  "description": "React公式チュートリアル（旧バージョン）を試すためのもの",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
