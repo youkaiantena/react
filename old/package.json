@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "React公式チュートリアル（旧バージョン）を試すためのもの",
   "main": "index.js",
-  "dependencies": {
-    "json-server": "^0.8.22"
+  "dependencies": {},
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node --harmony $(npm bin)/json-server --watch db.json --static ./web"
+    "server": "node server.js"
   },
   "author": "",
   "license": "ISC"
